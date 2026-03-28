@@ -1,0 +1,201 @@
+user_id,role,skills,country,language,goal,years_experience,industry
+U0001,Business Analyst,release management|planning,Italy,nl-NL,become a project manager,3,Healthcare
+U0002,Service Desk Analyst,incident management|SLA|ITSM|stakeholder engagement|business case,Germany,hi-IN,move into ITSM,4,Manufacturing
+U0003,Business Analyst,observability|benefits,USA,de-DE,become a project manager,4,Telecom
+U0004,IT Manager,governance|benefits management|stakeholder engagement|sprint planning|ITSM,UK,it-IT,transition to DevOps,6,IT Services
+U0005,IT Support Specialist,incident management|SLA|ITSM|prioritization|observability,Spain,en-GB,become a project manager,6,Public Sector
+U0006,IT Support Specialist,incident management|SLA|ITSM|service operations|retrospectives,Greece,hi-IN,become a project manager,6,Financial Services
+U0007,Business Analyst,agile|benefits management,Germany,es-ES,lead programmes,10,Manufacturing
+U0008,SRE/DevOps Engineer,CI/CD|automation|monitoring|story points|quality management,USA,de-DE,improve value management,10,Telecom
+U0009,Scrum Master,scrum ceremonies|retrospectives|product backlog|project controls|prioritization,India,hi-IN,transition to DevOps,0,IT Services
+U0010,Project Coordinator,risk management|planning|project governance|scrum mastery|continual improvement,Netherlands,en-GB,lead programmes,7,Public Sector
+U0011,Project Coordinator,risk management|planning|project governance|scrum mastery,UK,en-US,improve value management,5,Retail
+U0012,Service Desk Analyst,incident management|SLA|ITSM|scrum mastery|continual improvement,UK,it-IT,move into ITSM,5,Public Sector
+U0013,Project Coordinator,risk management|planning|project governance|governance|retrospectives,Spain,hi-IN,become a project manager,1,Retail
+U0014,SRE/DevOps Engineer,CI/CD|automation|monitoring|stakeholder management|agile,Spain,ar-AE,transition to DevOps,10,Financial Services
+U0015,IT Support Specialist,incident management|SLA|ITSM|story points,Netherlands,nl-NL,transition to DevOps,5,Healthcare
+U0016,Programme Manager,governance|benefits management|stakeholder engagement|blueprint design|project controls,Greece,en-GB,transition to DevOps,7,Retail
+U0017,Product Owner,product backlog|stakeholder management|SLA|automation,Spain,de-DE,lead programmes,7,Healthcare
+U0018,IT Manager,governance|benefits management|stakeholder engagement|story points|decision analysis,Italy,ar-AE,become a project manager,8,Manufacturing
+U0019,IT Support Specialist,incident management|SLA|ITSM|containers|benefits management,Greece,en-GB,improve value management,5,Public Sector
+U0020,Service Desk Analyst,incident management|SLA|ITSM|service operations|automation,Germany,nl-NL,transition to DevOps,5,Healthcare
+U0021,Project Coordinator,risk management|planning|project governance|service design|blueprint design,Germany,nl-NL,move into ITSM,6,Healthcare
+U0022,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,UAE,hi-IN,improve value management,7,Retail
+U0023,Software Developer,product ownership|CI/CD,Italy,de-DE,move into ITSM,5,Public Sector
+U0024,Programme Manager,governance|benefits management|stakeholder engagement|sprint planning|blueprint design,Netherlands,en-GB,move into ITSM,5,Public Sector
+U0025,Software Developer,business case|ITSM,Germany,en-GB,lead programmes,3,IT Services
+U0026,IT Manager,governance|benefits management|stakeholder engagement|continual improvement|infrastructure as code,Greece,de-DE,transition to DevOps,3,IT Services
+U0027,SRE/DevOps Engineer,CI/CD|automation|monitoring|risk management,South Africa,en-GB,lead programmes,8,IT Services
+U0028,Scrum Master,scrum ceremonies|retrospectives|product backlog|risk management|stakeholder management,USA,it-IT,advance in agile delivery,10,Financial Services
+U0029,Business Analyst,business change|automation,Italy,nl-NL,become a project manager,4,Retail
+U0030,Business Analyst,observability|product backlog,Netherlands,en-US,move into ITSM,7,Healthcare
+U0031,SRE/DevOps Engineer,CI/CD|automation|monitoring|stakeholder management|SLA,Greece,hi-IN,become a project manager,2,Public Sector
+U0032,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Greece,de-DE,advance in agile delivery,4,Telecom
+U0033,IT Manager,governance|benefits management|stakeholder engagement|containers|sprint planning,Italy,hi-IN,move into ITSM,4,Retail
+U0034,QA Engineer,observability|SLA,Germany,es-ES,move into ITSM,10,IT Services
+U0035,Programme Manager,governance|benefits management|stakeholder engagement|product ownership,Italy,es-ES,lead programmes,6,Financial Services
+U0036,Programme Manager,governance|benefits management|stakeholder engagement|release management|quality management,Italy,hi-IN,transition to DevOps,1,Telecom
+U0037,Service Desk Analyst,incident management|SLA|ITSM|service operations|benefits,UAE,es-ES,move into ITSM,0,IT Services
+U0038,Product Owner,product backlog|stakeholder management|programme management|benefits,Italy,el-GR,improve value management,2,Healthcare
+U0039,QA Engineer,story points|benefits management,UK,en-US,move into ITSM,6,Retail
+U0040,IT Manager,governance|benefits management|stakeholder engagement|sprint planning|incident management,Netherlands,hi-IN,become a project manager,6,Healthcare
+U0041,IT Manager,governance|benefits management|stakeholder engagement|incident management|observability,Netherlands,en-GB,advance in agile delivery,8,Financial Services
+U0042,Business Analyst,automation|SLA,Netherlands,hi-IN,transition to DevOps,0,Public Sector
+U0043,Programme Manager,governance|benefits management|stakeholder engagement|product ownership|automation,Germany,el-GR,transition to DevOps,7,IT Services
+U0044,IT Manager,governance|benefits management|stakeholder engagement|release management|monitoring,Spain,es-ES,become a project manager,6,Manufacturing
+U0045,Programme Manager,governance|benefits management|stakeholder engagement|SLA|scrum ceremonies,UK,ar-AE,become a project manager,7,Financial Services
+U0046,Software Developer,value management|observability,Spain,de-DE,move into ITSM,7,Retail
+U0047,Project Coordinator,risk management|planning|project governance|service design|release management,Italy,en-US,advance in agile delivery,13,Telecom
+U0048,Business Analyst,business case|service design,USA,it-IT,move into ITSM,9,IT Services
+U0049,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Italy,en-GB,move into ITSM,6,Public Sector
+U0050,Scrum Master,scrum ceremonies|retrospectives|product backlog|value management|business change,UAE,hi-IN,move into ITSM,7,Healthcare
+U0051,SRE/DevOps Engineer,CI/CD|automation|monitoring|stakeholder engagement,UK,nl-NL,move into ITSM,3,Public Sector
+U0052,QA Engineer,CI/CD|prioritization,UAE,en-US,improve value management,2,Telecom
+U0053,SRE/DevOps Engineer,CI/CD|automation|monitoring|business change|planning,Italy,hi-IN,advance in agile delivery,0,Retail
+U0054,Scrum Master,scrum ceremonies|retrospectives|product backlog|business change|service design,Italy,hi-IN,become a project manager,1,Financial Services
+U0055,Scrum Master,scrum ceremonies|retrospectives|product backlog|decision analysis,South Africa,es-ES,transition to DevOps,7,Public Sector
+U0056,Service Desk Analyst,incident management|SLA|ITSM|observability|project governance,Spain,nl-NL,lead programmes,3,Public Sector
+U0057,Business Analyst,business change|product backlog,India,ar-AE,improve value management,7,Financial Services
+U0058,QA Engineer,agile|change enablement,Greece,es-ES,lead programmes,9,Retail
+U0059,Business Analyst,service catalog|release management,Greece,de-DE,improve value management,6,Telecom
+U0060,Project Coordinator,risk management|planning|project governance|CI/CD|product ownership,UK,en-GB,become a project manager,7,Healthcare
+U0061,SRE/DevOps Engineer,CI/CD|automation|monitoring|continual improvement|product backlog,UAE,de-DE,improve value management,3,Retail
+U0062,Scrum Master,scrum ceremonies|retrospectives|product backlog|service design,Spain,el-GR,improve value management,5,Retail
+U0063,Service Desk Analyst,incident management|SLA|ITSM|story points,Spain,el-GR,improve value management,10,Public Sector
+U0064,Software Developer,blueprint design|benefits management,Spain,en-US,transition to DevOps,2,Financial Services
+U0065,Software Developer,ITSM|benefits management,South Africa,it-IT,transition to DevOps,8,Public Sector
+U0066,Programme Manager,governance|benefits management|stakeholder engagement|business case|story points,USA,ar-AE,become a project manager,11,Retail
+U0067,Software Developer,containers|stakeholder engagement,Spain,es-ES,lead programmes,7,Healthcare
+U0068,Business Analyst,automation|governance,India,en-US,improve value management,0,Telecom
+U0069,Project Coordinator,risk management|planning|project governance|governance|release management,Netherlands,hi-IN,move into ITSM,6,Financial Services
+U0070,IT Manager,governance|benefits management|stakeholder engagement|scrum mastery|scrum ceremonies,Germany,de-DE,move into ITSM,5,Healthcare
+U0071,Scrum Master,scrum ceremonies|retrospectives|product backlog|release management|sprint planning,India,nl-NL,move into ITSM,7,Financial Services
+U0072,Scrum Master,scrum ceremonies|retrospectives|product backlog|risk management,UK,nl-NL,transition to DevOps,8,IT Services
+U0073,Product Owner,product backlog|stakeholder management|observability|scrum ceremonies,UAE,hi-IN,improve value management,3,Retail
+U0074,QA Engineer,infrastructure as code|scrum mastery,India,de-DE,advance in agile delivery,3,Healthcare
+U0075,Software Developer,option analysis|scrum ceremonies,Netherlands,nl-NL,improve value management,5,Financial Services
+U0076,Software Developer,programme management|service catalog,USA,en-GB,transition to DevOps,3,Public Sector
+U0077,SRE/DevOps Engineer,CI/CD|automation|monitoring|option analysis|service operations,UAE,el-GR,transition to DevOps,6,Financial Services
+U0078,Service Desk Analyst,incident management|SLA|ITSM|stakeholder engagement|scrum ceremonies,Netherlands,de-DE,transition to DevOps,5,Telecom
+U0079,Product Owner,product backlog|stakeholder management|scrum ceremonies|governance,UAE,es-ES,move into ITSM,13,Healthcare
+U0080,Service Desk Analyst,incident management|SLA|ITSM|sprint planning|blueprint design,Netherlands,de-DE,improve value management,2,IT Services
+U0081,Business Analyst,incident management|option analysis,Spain,de-DE,move into ITSM,3,Public Sector
+U0082,IT Manager,governance|benefits management|stakeholder engagement|automation|programme management,India,en-US,lead programmes,7,Financial Services
+U0083,Software Developer,stakeholder engagement|prioritization,Germany,en-US,become a project manager,8,Telecom
+U0084,IT Support Specialist,incident management|SLA|ITSM|risk management|option analysis,Italy,nl-NL,transition to DevOps,12,Retail
+U0085,Project Coordinator,risk management|planning|project governance|continual improvement,Spain,en-US,improve value management,10,Manufacturing
+U0086,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,South Africa,en-GB,advance in agile delivery,8,Public Sector
+U0087,Scrum Master,scrum ceremonies|retrospectives|product backlog|prioritization|continual improvement,USA,it-IT,move into ITSM,6,Manufacturing
+U0088,Scrum Master,scrum ceremonies|retrospectives|product backlog|SLA,UAE,it-IT,improve value management,8,Manufacturing
+U0089,Software Developer,product ownership|story points,Germany,hi-IN,improve value management,4,Telecom
+U0090,SRE/DevOps Engineer,CI/CD|automation|monitoring|sprint planning|agile,India,nl-NL,improve value management,5,Public Sector
+U0091,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Greece,es-ES,transition to DevOps,1,Financial Services
+U0092,Software Developer,stakeholder management|service catalog,UAE,it-IT,move into ITSM,5,Healthcare
+U0093,Product Owner,product backlog|stakeholder management|decision analysis|retrospectives,Spain,it-IT,advance in agile delivery,8,Telecom
+U0094,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,USA,en-GB,lead programmes,5,Financial Services
+U0095,IT Support Specialist,incident management|SLA|ITSM|automation|monitoring,India,hi-IN,become a project manager,3,Retail
+U0096,Software Developer,project controls|retrospectives,India,en-GB,move into ITSM,4,Telecom
+U0097,Project Coordinator,risk management|planning|project governance|service design|automation,Italy,it-IT,transition to DevOps,8,Public Sector
+U0098,QA Engineer,value management|story points,USA,it-IT,advance in agile delivery,5,Retail
+U0099,Software Developer,governance|observability,Italy,de-DE,move into ITSM,8,Retail
+U0100,Project Coordinator,risk management|planning|project governance|business change,USA,el-GR,become a project manager,2,Financial Services
+U0101,Programme Manager,governance|benefits management|stakeholder engagement|agile,South Africa,hi-IN,lead programmes,3,Telecom
+U0102,IT Support Specialist,incident management|SLA|ITSM|CI/CD|project governance,Spain,it-IT,become a project manager,4,Telecom
+U0103,Service Desk Analyst,incident management|SLA|ITSM|sprint planning|programme management,Italy,en-GB,move into ITSM,2,Public Sector
+U0104,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,India,en-US,move into ITSM,14,Public Sector
+U0105,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Netherlands,el-GR,move into ITSM,2,Telecom
+U0106,Software Developer,planning|continual improvement,UAE,ar-AE,move into ITSM,8,Public Sector
+U0107,Business Analyst,blueprint design|product ownership,Germany,es-ES,move into ITSM,4,Financial Services
+U0108,IT Support Specialist,incident management|SLA|ITSM|benefits management|monitoring,South Africa,de-DE,lead programmes,4,Healthcare
+U0109,Software Developer,containers|observability,South Africa,nl-NL,advance in agile delivery,6,Public Sector
+U0110,SRE/DevOps Engineer,CI/CD|automation|monitoring|blueprint design|service catalog,Greece,de-DE,improve value management,1,Financial Services
+U0111,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Spain,el-GR,lead programmes,4,IT Services
+U0112,IT Manager,governance|benefits management|stakeholder engagement|problem management|monitoring,India,ar-AE,advance in agile delivery,5,IT Services
+U0113,Project Coordinator,risk management|planning|project governance|product backlog,Greece,de-DE,advance in agile delivery,3,Manufacturing
+U0114,Business Analyst,risk management|CI/CD,UAE,en-US,lead programmes,3,Financial Services
+U0115,Business Analyst,product ownership|governance,Germany,en-US,move into ITSM,9,Financial Services
+U0116,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Italy,ar-AE,move into ITSM,9,Healthcare
+U0117,Programme Manager,governance|benefits management|stakeholder engagement|observability|service design,Italy,hi-IN,lead programmes,4,Healthcare
+U0118,Software Developer,service operations|infrastructure as code,UK,nl-NL,improve value management,5,Telecom
+U0119,SRE/DevOps Engineer,CI/CD|automation|monitoring|stakeholder engagement|option analysis,Greece,de-DE,improve value management,9,Manufacturing
+U0120,SRE/DevOps Engineer,CI/CD|automation|monitoring|risk management|option analysis,Italy,en-GB,become a project manager,1,Healthcare
+U0121,QA Engineer,project controls|containers,Italy,el-GR,lead programmes,7,Healthcare
+U0122,Business Analyst,retrospectives|service operations,India,it-IT,transition to DevOps,11,Telecom
+U0123,Product Owner,product backlog|stakeholder management|SLA|change enablement,Netherlands,nl-NL,improve value management,11,Healthcare
+U0124,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,UK,ar-AE,move into ITSM,0,Telecom
+U0125,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,UAE,hi-IN,move into ITSM,3,Retail
+U0126,QA Engineer,product backlog|monitoring,UK,de-DE,lead programmes,6,Telecom
+U0127,SRE/DevOps Engineer,CI/CD|automation|monitoring|retrospectives|benefits,India,en-GB,become a project manager,2,Telecom
+U0128,QA Engineer,programme management|project governance,India,ar-AE,move into ITSM,3,IT Services
+U0129,Business Analyst,infrastructure as code|automation,Germany,es-ES,lead programmes,5,IT Services
+U0130,QA Engineer,monitoring|service operations,Spain,en-US,transition to DevOps,10,IT Services
+U0131,Business Analyst,product ownership|retrospectives,Italy,hi-IN,improve value management,5,Telecom
+U0132,Scrum Master,scrum ceremonies|retrospectives|product backlog|agile|automation,India,hi-IN,become a project manager,6,Healthcare
+U0133,Project Coordinator,risk management|planning|project governance|infrastructure as code|business case,Germany,en-US,advance in agile delivery,7,Manufacturing
+U0134,Scrum Master,scrum ceremonies|retrospectives|product backlog|release management|business case,Italy,en-GB,advance in agile delivery,7,Retail
+U0135,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Germany,ar-AE,lead programmes,6,Healthcare
+U0136,Product Owner,product backlog|stakeholder management|release management|benefits management,USA,nl-NL,transition to DevOps,2,Telecom
+U0137,Project Coordinator,risk management|planning|project governance|automation|stakeholder management,UAE,de-DE,transition to DevOps,8,IT Services
+U0138,Product Owner,product backlog|stakeholder management|agile|scrum ceremonies,UAE,el-GR,transition to DevOps,7,IT Services
+U0139,IT Manager,governance|benefits management|stakeholder engagement|business case|risk management,Netherlands,en-US,transition to DevOps,2,IT Services
+U0140,QA Engineer,product backlog|problem management,Germany,nl-NL,improve value management,3,Financial Services
+U0141,IT Support Specialist,incident management|SLA|ITSM|agile|stakeholder engagement,Netherlands,nl-NL,improve value management,8,IT Services
+U0142,Product Owner,product backlog|stakeholder management|sprint planning|scrum ceremonies,Netherlands,ar-AE,lead programmes,7,IT Services
+U0143,SRE/DevOps Engineer,CI/CD|automation|monitoring|continual improvement,Italy,de-DE,improve value management,3,IT Services
+U0144,Scrum Master,scrum ceremonies|retrospectives|product backlog|SLA|benefits,Greece,ar-AE,become a project manager,5,Retail
+U0145,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Netherlands,en-GB,advance in agile delivery,5,Telecom
+U0146,Product Owner,product backlog|stakeholder management|story points|product ownership,Spain,hi-IN,transition to DevOps,7,Public Sector
+U0147,Business Analyst,decision analysis|change enablement,Germany,en-US,lead programmes,9,Manufacturing
+U0148,Scrum Master,scrum ceremonies|retrospectives|product backlog|service catalog|automation,India,el-GR,become a project manager,6,Healthcare
+U0149,Business Analyst,stakeholder engagement|product backlog,Italy,en-GB,transition to DevOps,9,Telecom
+U0150,Business Analyst,sprint planning|change enablement,Greece,ar-AE,advance in agile delivery,8,Public Sector
+U0151,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,Italy,ar-AE,advance in agile delivery,6,Financial Services
+U0152,Scrum Master,scrum ceremonies|retrospectives|product backlog|agile|SLA,Spain,nl-NL,lead programmes,1,Telecom
+U0153,SRE/DevOps Engineer,CI/CD|automation|monitoring|project governance|option analysis,UAE,es-ES,move into ITSM,2,Public Sector
+U0154,Business Analyst,blueprint design|infrastructure as code,India,es-ES,become a project manager,8,Public Sector
+U0155,Product Owner,product backlog|stakeholder management|scrum mastery|benefits,Spain,es-ES,improve value management,0,Manufacturing
+U0156,Programme Manager,governance|benefits management|stakeholder engagement|programme management|benefits,Greece,en-GB,advance in agile delivery,6,Manufacturing
+U0157,Software Developer,incident management|risk management,Netherlands,el-GR,move into ITSM,9,Telecom
+U0158,Product Owner,product backlog|stakeholder management|monitoring|decision analysis,Spain,el-GR,lead programmes,6,Telecom
+U0159,QA Engineer,business case|governance,Germany,es-ES,transition to DevOps,4,Manufacturing
+U0160,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,India,en-US,become a project manager,3,Manufacturing
+U0161,Project Coordinator,risk management|planning|project governance|service design|benefits management,Netherlands,en-US,transition to DevOps,8,IT Services
+U0162,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,India,it-IT,improve value management,7,Retail
+U0163,Business Analyst,stakeholder engagement|risk management,UAE,it-IT,move into ITSM,5,Retail
+U0164,Project Coordinator,risk management|planning|project governance|agile|option analysis,South Africa,hi-IN,advance in agile delivery,9,Public Sector
+U0165,Project Coordinator,risk management|planning|project governance|project controls|continual improvement,India,es-ES,improve value management,8,Healthcare
+U0166,IT Support Specialist,incident management|SLA|ITSM|programme management,UK,es-ES,transition to DevOps,11,IT Services
+U0167,IT Support Specialist,incident management|SLA|ITSM|automation|sprint planning,Germany,nl-NL,transition to DevOps,7,Telecom
+U0168,Business Analyst,sprint planning|monitoring,South Africa,el-GR,transition to DevOps,5,Retail
+U0169,IT Support Specialist,incident management|SLA|ITSM|retrospectives|service catalog,UAE,es-ES,move into ITSM,5,Retail
+U0170,Product Owner,product backlog|stakeholder management|quality management|containers,India,de-DE,advance in agile delivery,0,IT Services
+U0171,Business Analyst,prioritization|sprint planning,Netherlands,en-GB,transition to DevOps,6,Telecom
+U0172,Project Coordinator,risk management|planning|project governance|product backlog,Greece,de-DE,improve value management,5,Retail
+U0173,SRE/DevOps Engineer,CI/CD|automation|monitoring|option analysis|blueprint design,Netherlands,de-DE,become a project manager,2,Manufacturing
+U0174,SRE/DevOps Engineer,CI/CD|automation|monitoring|quality management|continual improvement,USA,de-DE,lead programmes,5,Financial Services
+U0175,Project Coordinator,risk management|planning|project governance|release management|product ownership,South Africa,en-GB,advance in agile delivery,10,Manufacturing
+U0176,IT Manager,governance|benefits management|stakeholder engagement|programme management|sprint planning,Italy,el-GR,move into ITSM,3,Retail
+U0177,Service Desk Analyst,incident management|SLA|ITSM|programme management|problem management,Netherlands,de-DE,lead programmes,3,Telecom
+U0178,Service Desk Analyst,incident management|SLA|ITSM|decision analysis|stakeholder engagement,UK,el-GR,improve value management,9,Healthcare
+U0179,QA Engineer,planning|continual improvement,India,ar-AE,advance in agile delivery,7,Public Sector
+U0180,SRE/DevOps Engineer,CI/CD|automation|monitoring|SLA|containers,USA,de-DE,lead programmes,15,IT Services
+U0181,Programme Manager,governance|benefits management|stakeholder engagement|ITSM|observability,India,en-GB,move into ITSM,2,Healthcare
+U0182,Scrum Master,scrum ceremonies|retrospectives|product backlog|story points|SLA,India,ar-AE,move into ITSM,8,IT Services
+U0183,Product Owner,product backlog|stakeholder management|infrastructure as code|product ownership,Greece,el-GR,advance in agile delivery,6,Public Sector
+U0184,Business Analyst,risk management|benefits management,Netherlands,nl-NL,lead programmes,6,Public Sector
+U0185,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,South Africa,nl-NL,move into ITSM,8,Manufacturing
+U0186,Programme Manager,governance|benefits management|stakeholder engagement|planning|project controls,USA,de-DE,transition to DevOps,5,Healthcare
+U0187,Project Coordinator,risk management|planning|project governance|monitoring|release management,India,nl-NL,transition to DevOps,0,Retail
+U0188,IT Support Specialist,incident management|SLA|ITSM|business change|story points,Netherlands,es-ES,advance in agile delivery,3,Financial Services
+U0189,Business Analyst,agile|continual improvement,Greece,en-US,move into ITSM,10,Healthcare
+U0190,IT Support Specialist,incident management|SLA|ITSM|prioritization|programme management,USA,en-GB,lead programmes,9,Public Sector
+U0191,QA Engineer,release management|planning,UAE,it-IT,improve value management,4,Manufacturing
+U0192,Scrum Master,scrum ceremonies|retrospectives|product backlog|blueprint design|project governance,South Africa,es-ES,advance in agile delivery,7,IT Services
+U0193,SRE/DevOps Engineer,CI/CD|automation|monitoring|business case|quality management,Germany,ar-AE,become a project manager,14,Manufacturing
+U0194,IT Support Specialist,incident management|SLA|ITSM|value management|benefits management,Netherlands,en-US,advance in agile delivery,5,Public Sector
+U0195,Project Coordinator,risk management|planning|project governance|story points|benefits management,South Africa,hi-IN,move into ITSM,5,Public Sector
+U0196,Business Analyst,governance|option analysis,Germany,es-ES,improve value management,6,Manufacturing
+U0197,Project Manager,risk management|planning|project governance|governance|benefits management|stakeholder engagement,UK,el-GR,become a project manager,7,Public Sector
+U0198,Business Analyst,service design|continual improvement,Germany,en-GB,move into ITSM,4,Retail
+U0199,QA Engineer,quality management|scrum ceremonies,UAE,ar-AE,advance in agile delivery,7,Financial Services
+U0200,Product Owner,product backlog|stakeholder management|observability|business change,South Africa,en-US,move into ITSM,0,Financial Services
