@@ -1,71 +1,44 @@
-from collections import defaultdict
-from typing import List
-
-import pandas as pd
 from fastapi import FastAPI, HTTPException
-from sklearn.feature_extraction.text import TfidfVectorizer
+import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+from collections import defaultdict
 
 app = FastAPI(title="Career Coach Recommender API")
-
 
 # -----------------------------
 # Load data
 # -----------------------------
 cat_df = pd.read_csv("catalog.csv")
-purch_df = pd.read_csv("purchases.csv")
-signal_df = pd.read_csv("signals.csv")
-user_df = pd.read_csv("users.csv")
-
-# Ensure purchase_date is parsed for possible evaluation / ordering
-if "purchase_date" in purch_df.columns:
-    purch_df["purchase_date"] = pd.to_datetime(purch_df["purchase_date"], errors="coerce")
-
-# -----------------------------
-# Basic cleaning
-# -----------------------------
+purch_df = pd.read_csv("purchases.csv", dtype={"user_id": str})
+signal_df = pd.read_csv("signals.csv", dtype={"user_id": str})
+user_df = pd.read_csv("users.csv", dtype={"user_id": str})
 cat_df["prerequisites"] = cat_df["prerequisites"].fillna("")
-cat_df["skills"] = cat_df["skills"].fillna("")
-cat_df["short_desc"] = cat_df["short_desc"].fillna("")
-cat_df["name"] = cat_df["name"].fillna("")
-
-user_df["role"] = user_df["role"].fillna("")
-user_df["skills"] = user_df["skills"].fillna("")
-user_df["goal"] = user_df["goal"].fillna("")
-
-# Keep user_id / cert_id consistent as strings
-cat_df["cert_id"] = cat_df["cert_id"].astype(str)
-purch_df["cert_id"] = purch_df["cert_id"].astype(str)
-purch_df["user_id"] = purch_df["user_id"].astype(str)
-signal_df["cert_id"] = signal_df["cert_id"].astype(str)
-signal_df["user_id"] = signal_df["user_id"].astype(str)
-user_df["user_id"] = user_df["user_id"].astype(str)
 
 # -----------------------------
-# Content-based preparation
+# Build content-based features
 # -----------------------------
 user_df["profile_text"] = (
-    user_df["role"].astype(str) + " " +
-    user_df["skills"].astype(str).str.replace("|", " ", regex=False) + " " +
-    user_df["goal"].astype(str)
+    user_df["role"].fillna("") + " " +
+    user_df["skills"].fillna("") + " " +
+    user_df["goal"].fillna("")
 )
 
 cat_df["cert_text"] = (
-    cat_df["name"].astype(str) + " " +
-    cat_df["skills"].astype(str).str.replace("|", " ", regex=False) + " " +
-    cat_df["short_desc"].astype(str)
+    cat_df["name"].fillna("") + " " +
+    cat_df["skills"].fillna("") + " " +
+    cat_df["short_desc"].fillna("")
 )
 
-all_text = pd.concat([user_df["profile_text"], cat_df["cert_text"]], axis=0)
+all_text = pd.concat([user_df["profile_text"], cat_df["cert_text"]])
 
-vectorizer = TfidfVectorizer(stop_words="english")
-tfidf_matrix = vectorizer.fit_transform(all_text)
+vectorizer = TfidfVectorizer()
+vectorizer.fit(all_text)
 
-n_users = len(user_df)
-user_tfidf = tfidf_matrix[:n_users]
-cert_tfidf = tfidf_matrix[n_users:]
+user_vectors = vectorizer.transform(user_df["profile_text"])
+cert_vectors = vectorizer.transform(cat_df["cert_text"])
 
-similarity_matrix = cosine_similarity(user_tfidf, cert_tfidf)
+similarity_matrix = cosine_similarity(user_vectors, cert_vectors)
 
 content_score_df = pd.DataFrame(
     similarity_matrix,
@@ -74,16 +47,14 @@ content_score_df = pd.DataFrame(
 )
 
 # -----------------------------
-# Co-occurrence preparation
+# Build co-occurrence
 # -----------------------------
 user_cert_map = purch_df.groupby("user_id")["cert_id"].apply(list)
-
 co_occurrence = defaultdict(lambda: defaultdict(int))
 
 for certs in user_cert_map.values:
-    unique_certs = list(set(certs))
-    for i in unique_certs:
-        for j in unique_certs:
+    for i in certs:
+        for j in certs:
             if i != j:
                 co_occurrence[i][j] += 1
 
@@ -93,7 +64,7 @@ max_cooccurrence = max(
 )
 
 # -----------------------------
-# Popularity score preparation
+# Build popularity
 # -----------------------------
 event_counts = signal_df.groupby(["cert_id", "event"]).size().unstack(fill_value=0)
 
@@ -101,105 +72,74 @@ for col in ["impression", "click", "add_to_cart", "purchase"]:
     if col not in event_counts.columns:
         event_counts[col] = 0
 
-event_counts["signal_score"] = (
+event_counts["popularity_score"] = (
     1 * event_counts["impression"] +
     3 * event_counts["click"] +
     5 * event_counts["add_to_cart"] +
     8 * event_counts["purchase"]
 )
 
-if event_counts["signal_score"].max() > 0:
-    event_counts["signal_score"] = event_counts["signal_score"] / event_counts["signal_score"].max()
+event_counts["popularity_score"] = (
+    event_counts["popularity_score"] / event_counts["popularity_score"].max()
+)
 
-signal_score_dict = event_counts["signal_score"].to_dict()
-
-purchase_counts = purch_df["cert_id"].value_counts()
-if len(purchase_counts) > 0 and purchase_counts.max() > 0:
-    purchase_score_dict = (purchase_counts / purchase_counts.max()).to_dict()
-else:
-    purchase_score_dict = {}
-
-combined_popularity_score_dict = {}
-for cert_id in cat_df["cert_id"]:
-    signal_score = signal_score_dict.get(cert_id, 0)
-    purchase_score = purchase_score_dict.get(cert_id, 0)
-    combined_popularity_score_dict[cert_id] = 0.6 * signal_score + 0.4 * purchase_score
-
+popularity_score_dict = event_counts["popularity_score"].to_dict()
 
 # -----------------------------
 # Helper functions
 # -----------------------------
-def get_user_purchases(user_id: str) -> set:
+def get_user_purchases(user_id):
     return set(
-        purch_df[purch_df["user_id"] == user_id]["cert_id"].tolist()
+        purch_df[purch_df["user_id"] == user_id]["cert_id"].astype(str).tolist()
     )
 
-
-def has_prerequisites(user_id: str, cert_id: str) -> bool:
+def has_prerequisites(user_id, cert_id):
     user_purchases = get_user_purchases(user_id)
-    prereq_value = cat_df.loc[cat_df["cert_id"] == cert_id, "prerequisites"].iloc[0]
+
+    cert_match = cat_df.loc[cat_df["cert_id"] == cert_id, "prerequisites"]
+    if cert_match.empty:
+        return False
+
+    prereq_value = cert_match.iloc[0]
 
     if pd.isna(prereq_value) or str(prereq_value).strip() == "":
         return True
 
-    required_certs = set(str(prereq_value).split("|"))
+    required_certs = {x.strip() for x in str(prereq_value).split("|") if x.strip()}
     return required_certs.issubset(user_purchases)
 
-
-def get_normalized_cooccurrence_score(user_id: str, candidate_cert_id: str) -> float:
+def get_cooccurrence_score(user_id, candidate_cert_id):
     user_purchases = get_user_purchases(user_id)
 
     score = 0
     for purchased_cert in user_purchases:
         score += co_occurrence[purchased_cert].get(candidate_cert_id, 0)
 
-    return score / max_cooccurrence if max_cooccurrence > 0 else 0.0
+    return score
 
+def get_normalized_cooccurrence_score(user_id, candidate_cert_id):
+    raw_score = get_cooccurrence_score(user_id, candidate_cert_id)
+    return raw_score / max_cooccurrence if max_cooccurrence else 0
 
-def generate_reason(user_id: str, cert_id: str) -> str:
-    user_row = user_df[user_df["user_id"] == user_id].iloc[0]
-    cert_row = cat_df[cat_df["cert_id"] == cert_id].iloc[0]
-
-    reasons: List[str] = []
-
-    user_skills = set(str(user_row["skills"]).split("|")) if str(user_row["skills"]).strip() else set()
-    cert_skills = set(str(cert_row["skills"]).split("|")) if str(cert_row["skills"]).strip() else set()
-    overlap = user_skills.intersection(cert_skills)
-
-    if overlap:
-        reasons.append(f"Matches your skills in {', '.join(list(overlap)[:2])}")
-
-    if get_normalized_cooccurrence_score(user_id, cert_id) > 0:
-        reasons.append("Frequently taken with your previous certificates")
-
-    if not reasons:
-        reasons.append("Popular among learners with similar interests")
-
-    return ". ".join(reasons[:2]) + "."
-
-
-def recommend_hybrid_with_reason(user_id: str, top_k: int = 5) -> list:
+def recommend_hybrid(user_id, top_k=5):
     user_purchases = get_user_purchases(user_id)
     recommendations = []
 
     for cert_id in cat_df["cert_id"]:
-        # Exclude already purchased certificates
         if cert_id in user_purchases:
             continue
 
-        # Enforce prerequisites
         if not has_prerequisites(user_id, cert_id):
             continue
 
-        # Scores
-        content_score = float(content_score_df.loc[user_id, cert_id])
-        cooccurrence_score = float(get_normalized_cooccurrence_score(user_id, cert_id))
-        popularity_score = float(combined_popularity_score_dict.get(cert_id, 0))
+        content_score = content_score_df.loc[user_id, cert_id]
+        cooccurrence_score = get_normalized_cooccurrence_score(user_id, cert_id)
+        popularity_score = popularity_score_dict.get(cert_id, 0)
 
         final_score = (
-            0.45 * content_score +
-            0.30 * cooccurrence_score +
-            0.25 * popularity_score
+            0.5 * content_score +
+            0.3 * cooccurrence_score +
+            0.2 * popularity_score
         )
 
         cert_row = cat_df[cat_df["cert_id"] == cert_id].iloc[0]
@@ -207,28 +147,62 @@ def recommend_hybrid_with_reason(user_id: str, top_k: int = 5) -> list:
         recommendations.append({
             "cert_id": cert_id,
             "name": cert_row["name"],
-            "reason": generate_reason(user_id, cert_id),
-            "score": round(final_score, 4)
+            "content_score": round(float(content_score), 4),
+            "cooccurrence_score": round(float(cooccurrence_score), 4),
+            "popularity_score": round(float(popularity_score), 4),
+            "final_score": round(float(final_score), 4)
         })
 
-    recommendations = sorted(recommendations, key=lambda x: x["score"], reverse=True)
-    return recommendations[:top_k]
+    recommendations = sorted(recommendations, key=lambda x: x["final_score"], reverse=True)
+    return pd.DataFrame(recommendations[:top_k])
 
+def build_reason(user_id, cert_id, content_score, cooccurrence_score, popularity_score):
+    user_row = user_df[user_df["user_id"] == user_id].iloc[0]
+    cert_row = cat_df[cat_df["cert_id"] == cert_id].iloc[0]
+
+    user_skills = set(str(user_row["skills"]).lower().split("|")) if pd.notna(user_row["skills"]) else set()
+    cert_skills = set(str(cert_row["skills"]).lower().split("|")) if pd.notna(cert_row["skills"]) else set()
+
+    overlap = user_skills.intersection(cert_skills)
+
+    if overlap:
+        return f"Matches your skills in {', '.join(list(overlap)[:2])}"
+    if cooccurrence_score > 0:
+        return "Frequently taken next by similar learners"
+    if popularity_score > 0:
+        return "Popular among learners with similar interests"
+    return "Relevant to your profile and career goal"
+
+def recommend_for_user(user_id, top_k=5):
+    if user_id not in set(user_df["user_id"].tolist()):
+        raise HTTPException(status_code=404, detail="User not found")
+
+    recs_df = recommend_hybrid(user_id, top_k=top_k).copy()
+
+    results = []
+    for _, row in recs_df.iterrows():
+        results.append({
+            "cert_id": row["cert_id"],
+            "name": row["name"],
+            "reason": build_reason(
+                user_id,
+                row["cert_id"],
+                row["content_score"],
+                row["cooccurrence_score"],
+                row["popularity_score"]
+            ),
+            "score": float(row["final_score"])
+        })
+
+    return results
 
 # -----------------------------
 # API endpoints
 # -----------------------------
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
+@app.get("/")
+def root():
+    return {"message": "Career Coach Recommender API is running"}
 
 @app.get("/recommend")
 def recommend(user_id: str, top_k: int = 5):
-    if user_id not in set(user_df["user_id"]):
-        raise HTTPException(status_code=404, detail="User not found")
-
-    if top_k < 1:
-        raise HTTPException(status_code=400, detail="top_k must be at least 1")
-
-    return recommend_hybrid_with_reason(user_id=user_id, top_k=top_k)
+    return recommend_for_user(user_id, top_k)
