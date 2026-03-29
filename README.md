@@ -184,6 +184,41 @@ FastAPI automatically provides interactive documentation at:
 http://127.0.0.1:8000/docs
 ```
 
+## Response example 
+
+[
+  {
+    "cert_id": "MSPF",
+    "name": "MSP Foundation",
+    "reason": "Matches your skills in stakeholder engagement, benefits management",
+    "score": 0.2525
+  },
+  {
+    "cert_id": "DevOpsF",
+    "name": "DevOps Foundation",
+    "reason": "Popular among learners with similar interests",
+    "score": 0.1797
+  },
+  {
+    "cert_id": "PRINCE2F",
+    "name": "PRINCE2 Foundation",
+    "reason": "Popular among learners with similar interests",
+    "score": 0.1746
+  },
+  {
+    "cert_id": "ITILF",
+    "name": "ITIL Foundation",
+    "reason": "Matches your skills in itsm",
+    "score": 0.1619
+  },
+  {
+    "cert_id": "ScrumF",
+    "name": "Scrum Foundation",
+    "reason": "Popular among learners with similar interests",
+    "score": 0.1368
+  }
+]
+
 ## Running the dockerfile 
 First create a docker image
 ```bash
@@ -207,7 +242,6 @@ Potential next steps include:
 * real-time feedback logging
 * Unit tests
 
-I intentionally optimized for clarity and explainability first. If I had another iteration, I’d add language filtering, offline evaluation like Recall@5, , stronger semantic matching with embeddings, and unit tests.
 
 ---
 
