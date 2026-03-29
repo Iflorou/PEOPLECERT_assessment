@@ -204,9 +204,10 @@ Potential next steps include:
 
 * evaluation using **Recall@5** 
 * semantic embeddings for better text matching
-* sequence-aware recommendation models
 * real-time feedback logging
 * Unit tests
+
+I intentionally optimized for clarity and explainability first. If I had another iteration, I’d add language filtering, offline evaluation like Recall@5, , stronger semantic matching with embeddings, and unit tests.
 
 ---
 
