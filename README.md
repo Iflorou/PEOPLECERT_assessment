@@ -90,9 +90,9 @@ Formula:
 
 ```text
 final_score =
-0.45 * content_score +
+0.5 * content_score +
 0.30 * cooccurrence_score +
-0.25 * popularity_score
+0.2 * popularity_score
 ```
 
 ### 4. Business Rules
@@ -195,7 +195,7 @@ docker  run -p 8000:8000 peoplecert_assessment
 ```
 Then open
 ```text
-[http://http://localhost/:8000/docs](http://localhost:8000/docs)
+http://localhost:8000/docs
 ```
 
 ## Future Improvements
