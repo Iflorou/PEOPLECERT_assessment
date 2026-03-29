@@ -237,7 +237,7 @@ http://localhost:8000/docs
 
 Potential next steps include:
 
-* evaluation using **Recall@5** 
+* more work on evaluation (**Recall@5**)
 * semantic embeddings for better text matching
 * real-time feedback logging
 * Unit tests
