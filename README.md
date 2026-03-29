@@ -28,6 +28,7 @@ It also exposes recommendations through a **FastAPI endpoint**.
 ```text
 ├── ML_Engineer_Candidate _test.ipynb
 ├── app.py
+├── dockerfile
 ├── catalog.csv
 ├── users.csv
 ├── purchases.csv
@@ -183,7 +184,19 @@ FastAPI automatically provides interactive documentation at:
 http://127.0.0.1:8000/docs
 ```
 
----
+## Running the dockerfile 
+First create a docker image
+```bash
+docker  build -t peoplecert_assessment .
+```
+Then run the image 
+```bash
+docker  run -p 8000:8000 peoplecert_assessment
+```
+Then open
+```text
+[http://http://localhost/:8000/docs](http://localhost:8000/docs)
+```
 
 ## Future Improvements
 
@@ -193,7 +206,7 @@ Potential next steps include:
 * semantic embeddings for better text matching
 * sequence-aware recommendation models
 * real-time feedback logging
-* Dockerization and unit tests
+* Unit tests
 
 ---
 
